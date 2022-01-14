@@ -12,14 +12,14 @@ def check_list_of_list_of_array_format(points):
 
 def check_shapes_compatibility(list_of_arrays, i):
 	arr0 = list_of_arrays[0]
-	if type(arr0) != np.ndarray:
+	if not isinstance(arr0, np.ndarray):
 		raise ValueError(
 			"Expected points of format list of `numpy.ndarray`s.", 
 			f"Got {type(arr0)} for component {i} of point 0."
 		)
 	shape = arr0.shape
 	for j, arr in enumerate(list_of_arrays[1:]):
-		if type(arr) != np.ndarray:
+		if not isinstance(arr, np.ndarray):
 			raise ValueError(
 				f"Expected points of format list of `numpy.ndarray`s. Got {type(arr)}",
 				f"for component {i} of point {j+1}."

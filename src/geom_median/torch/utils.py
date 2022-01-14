@@ -12,14 +12,14 @@ def check_list_of_list_of_array_format(points):
 
 def check_shapes_compatibility(list_of_arrays, i):
 	arr0 = list_of_arrays[0]
-	if type(arr0) != torch.Tensor:
+	if not isinstance(arr0, torch.Tensor):
 		raise ValueError(
 			"Expected points of format list of `torch.Tensor`s.", 
 			f"Got {type(arr0)} for component {i} of point 0."
 		)
 	shape = arr0.shape
 	for j, arr in enumerate(list_of_arrays[1:]):
-		if type(arr) != torch.Tensor:
+		if not isinstance(arr, torch.Tensor):
 			raise ValueError(
 				f"Expected points of format list of `torch.Tensor`s. Got {type(arr)}",
 				f"for component {i} of point {j+1}."
