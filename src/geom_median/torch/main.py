@@ -17,16 +17,17 @@ def compute_geometric_median(
 		raise ValueError(
 			f"We expect `points` as a list of arrays or a list of tuples of arrays. Got {type(points)}"
 		)
-	if weights is None:
-		n = len(points)
-		weights = torch.ones(n)
 	if type(points[0]) == torch.Tensor: # `points` are given in list of arrays format
 		if not skip_typechecks:
 			utils.check_list_of_array_format(points)
+		if weights is None:
+			weights = torch.ones(len(points), device=points[0].device)
 		to_return = geometric_median_array(points, weights, eps, maxiter, ftol)
 	elif type(points[0]) in [list, tuple]: # `points` are in list of list of arrays format
 		if not skip_typechecks:
 			utils.check_list_of_list_of_array_format(points)
+		if weights is None:
+			weights = torch.ones(len(points), device=points[0][0].device)
 		if per_component:
 			to_return = geometric_median_per_component(points, weights, eps, maxiter, ftol)
 		else:
