@@ -100,7 +100,7 @@ In case of questions, please raise an issue on GitHub.
 If you found this package useful, please consider citing this paper. 
 
 ```
-@article{pillutla:etal:rfa ,
+@article{pillutla:etal:rfa,
   author={Pillutla, Krishna and Kakade, Sham M. and Harchaoui, Zaid},
   journal={IEEE Transactions on Signal Processing}, 
   title={{Robust Aggregation for Federated Learning}}, 
@@ -109,6 +109,5 @@ If you found this package useful, please consider citing this paper.
   number={},
   pages={1142-1154},
   doi={10.1109/TSP.2022.3153135}
-}
 }
 ```
