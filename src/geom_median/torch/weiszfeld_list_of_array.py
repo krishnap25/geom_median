@@ -58,7 +58,7 @@ def weighted_average(points, weights):
 
 @torch.no_grad()
 def geometric_median_objective(median, points, weights):
-    return np.average([l2distance(p, median).item() for p in points], weights=weights)
+    return np.average([l2distance(p, median).item() for p in points], weights=weights.cpu())
 
 @torch.no_grad()
 def l2distance(p1, p2):

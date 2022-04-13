@@ -81,4 +81,4 @@ def weighted_average(points, weights):
 
 @torch.no_grad()
 def geometric_median_objective(median, points, weights):
-    return np.average([torch.linalg.norm((p - median).reshape(-1)).item() for p in points], weights=weights)
+    return np.average([torch.linalg.norm((p - median).reshape(-1)).item() for p in points], weights=weights.cpu())
