@@ -101,9 +101,14 @@ If you found this package useful, please consider citing this paper.
 
 ```
 @article{pillutla:etal:rfa ,
-  title={{Robust Aggregation for Federated Learning}},
-  author={Pillutla, Krishna and  Kakade, Sham M. and Harchaoui, Zaid},
-  journal={arXiv preprint},
-  year={2019}
+  author={Pillutla, Krishna and Kakade, Sham M. and Harchaoui, Zaid},
+  journal={IEEE Transactions on Signal Processing}, 
+  title={{Robust Aggregation for Federated Learning}}, 
+  year={2022},
+  volume={70},
+  number={},
+  pages={1142-1154},
+  doi={10.1109/TSP.2022.3153135}
+}
 }
 ```
